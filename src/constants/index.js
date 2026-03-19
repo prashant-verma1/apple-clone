@@ -8,4 +8,4 @@ const navLinks = [
     {label: "Vision"}, 
 ];
 
-export default navLinks;
+export {navLinks};
