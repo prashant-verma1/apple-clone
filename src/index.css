@@ -185,7 +185,7 @@ body {
 }
 
 #showcase .media {
-  @apply relative lg:overflow-hidden;
+  @apply relative overflow-hidden;
 }
 
 #showcase .media video {
@@ -193,57 +193,16 @@ body {
 }
 
 #showcase .media .mask {
-  @apply absolute h-full top-0 lg:-top-20 xl:top-0;
+  @apply absolute w-full h-full top-0 left-0 flex items-center justify-center;
 }
 
 #showcase .media .mask img {
-  @apply h-full scale-150 lg:scale-100;
+  @apply w-full h-full object-cover scale-[4] md:scale-150 lg:scale-100;
   transform: matrix(80, 0, 0, 80, 0, 0);
 }
 
-@media (max-width: 1024px) {
-  #showcase .media .mask img {
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-}
-
 #showcase .content {
-  @apply relative z-10 my-5 lg:-mt-40 bg-black font-semibold text-xl text-gray-300 lg:opacity-0;
-}
-
-#showcase .content .wrapper {
-  @apply container mx-auto px-5 pb-20 2xl:px-0 flex flex-col lg:flex-row justify-center gap-20;
-}
-
-#showcase .content h2 {
-  @apply font-semibold text-3xl lg:text-7xl text-white;
-}
-
-#showcase .content h3 {
-  @apply font-semibold text-xl lg:text-5xl text-white;
-}
-
-#showcase .media video {
-  @apply w-full object-cover object-center;
-}
-
-#showcase .media .mask {
-  @apply absolute h-full top-0 lg:-top-20 xl:top-0;
-}
-
-#showcase .media .mask img {
-  @apply h-full scale-150 lg:scale-100;
-  transform: matrix(80, 0, 0, 80, 0, 0);
-}
-
-@media (max-width: 1024px) {
-  #showcase .media .mask img {
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-}
-
-#showcase .content {
-  @apply relative z-10 my-5 lg:-mt-40 bg-black font-semibold text-xl text-gray-300 lg:opacity-0;
+  @apply relative z-10 my-5 lg:-mt-40 bg-black font-semibold text-xl text-gray-300 opacity-0;
 }
 
 #showcase .content .wrapper {

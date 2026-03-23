@@ -26,8 +26,7 @@ const ModelSwitcher = ({ scale, isMobile }) => {
   const smallMacbookRef = useRef();
   const largeMacbookRef = useRef();
 
-  const ShowLargeMacbook =
-    parseFloat(scale) === 0.08 || parseFloat(scale) === 0.05;
+  const ShowLargeMacbook = scale === 0.08;
 
   useGSAP(
     () => {
@@ -49,6 +48,8 @@ const ModelSwitcher = ({ scale, isMobile }) => {
   );
 
   const controlsConfig = {
+    global: true,
+    cursor: true,
     snap: true,
     speed: 1,
     zoom: 1,
@@ -63,18 +64,14 @@ const ModelSwitcher = ({ scale, isMobile }) => {
     azimuthSpeed: 0.5,
   };
   return (
-    <>
-      <PresentationControls {...controlsConfig}>
-        <group ref={largeMacbookRef}>
-          <MacbookModel16 scale={isMobile ? scale - 0.05 : 0.08} />
-        </group>
-      </PresentationControls>
-      <PresentationControls {...controlsConfig}>
-        <group ref={smallMacbookRef}>
-          <MacbookModel14 scale={isMobile ? scale - 0.03 : 0.06} />
-        </group>
-      </PresentationControls>
-    </>
+    <PresentationControls {...controlsConfig}>
+      <group ref={largeMacbookRef}>
+        <MacbookModel16 scale={isMobile ? 0.05 : 0.08} />
+      </group>
+      <group ref={smallMacbookRef}>
+        <MacbookModel14 scale={isMobile ? 0.04 : 0.06} />
+      </group>
+    </PresentationControls>
   );
 };
 
