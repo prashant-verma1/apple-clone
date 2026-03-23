@@ -2,9 +2,9 @@ import useMacBookStore from "../store";
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import StudioLight from "./three/studioLight.jsx";
-import { MacbookModel14 } from "./modals/Macbook-14";
-import { MacbookModel16 } from "./modals/Macbook-16";
+import StudioLight from "./three/StudioLights.jsx";
+import MacbookModel14 from "./models/Macbook-14.jsx";
+import MacbookModel16 from "./models/Macbook-16.jsx";
 import ModelSwitcher from "./three/ModelSwitcher.jsx";
 import { useMediaQuery } from "react-responsive";
 
@@ -65,9 +65,11 @@ const ProductViewer = () => {
 
       <Canvas id="canvas" camera={{ position: [0, 0, 4], fov: 45 }}>
         <StudioLight />
-        
 
-        <ModelSwitcher scale={isMobile ? scale -0.03 : scale} isMobile={isMobile} />
+        <ModelSwitcher
+          scale={isMobile ? scale - 0.03 : scale}
+          isMobile={isMobile}
+        />
       </Canvas>
     </section>
   );
